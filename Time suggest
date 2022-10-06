@@ -1,0 +1,46 @@
+#include<iostream>
+#include <omp.h>
+#include <time.h>
+#include <fstream>
+#include <stdlib.h>
+#include <string>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <unistd.h>
+#include <sstream>
+#include <ios>
+
+#include "Network.h"
+#include "Constants.h"
+#include "Greedy.h"
+#include  "Streaming.h"
+
+#include <chrono>
+#include <iomanip> // setprecision
+
+#if defined(_WIN32)
+#include<direct.h>
+#else
+#include <sys/stat.h>
+#include <sys/types.h>
+#endif
+int main(int argc, char* argv[]) {
+	srand(time(NULL));
+	//omp_set_num_threads(Constants::NUM_THREAD);
+	//run_experiments(4039, "facebook_combined.txt", false);
+	//run_experiments(58, "sensor.txt", false);
+
+	string r = parseArgs(argc, argv);
+	if (r== "error") {
+		cout << "Wrong file, format or arguments" << endl;
+		print_help();
+	} else
+		run_command(r,g);
+
+	return 1;
+}
+run_command{
+  ................
+  double time = (double)(clock()-start)/CLOCKS_PER_SEC ;
+}
